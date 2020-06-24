@@ -77,6 +77,7 @@ class BooksFragment : BaseFragment(R.layout.fragment_books),
             rv_bookshelf.layoutManager = GridLayoutManager(context, bookshelfLayout + 2)
             booksAdapter = BooksAdapterGrid(requireContext(), this)
         }
+        rv_bookshelf.isEnableScroll = !AppConfig.isEInkMode
         rv_bookshelf.adapter = booksAdapter
         booksAdapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
             override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
